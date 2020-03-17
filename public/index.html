@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Formulario</title>
+    <link rel="stylesheet" type="text/css" media="all" href="styles/filedrag.css"/>
+</head>
+<body>
+
+<form id="upload" method="POST"
+      enctype="multipart/form-data">
+    <fieldset>
+        <legend>Datos del cliente</legend>
+        <br></br>
+        <div>
+            Nombre: <input id="name" placeholder="Introduce tu nombre" size="50" autofocus required/>
+        </div>
+        <br></br>
+        <div>
+            Teléfono: <input type="tel" id="tlf" placeholder="Patrón: 123-456-789" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" size="50" required/>
+        </div>
+        <br></br>
+        <div>
+            E-mail: <input type="email" id="email" placeholder="Introduce tu dirección de correo electrónico" size="50" required/>
+        </div>
+        <br></br>
+    </fieldset>
+
+    <fieldset>
+        <legend>Libros</legend>
+        <br></br>
+        <div>
+            <input type="text" list="libros" id="lista" required>
+            <datalist id="libros">
+                <option value="Harry Potter">
+                <option value="Los juegos del hambre">
+                <option value="Tierra">
+                <option value="La vida que no elegi">
+                <option value="El valle sin nombre">
+            </datalist>
+
+            Cantidad (Max. 5): <input id="cantidad" name="cantidad" type="number" min="1" max="5" step="1" value="1">
+
+        </div>
+        <br></br>
+    </fieldset>
+    <br></br>
+    <div>
+
+        <div id="filedrag">Arrastra aqui tus ficheros</div>
+
+        <input type="file" id="fileselect" name="fileselect" multiple/>
+
+    </div>
+
+    <br></br>
+    <input type="button" id="enviar" value="Enviar">
+</form>
+<script src="js/filedrag.js"></script>
+<div id="messages">
+
+</div>
+</body>
+</html>
