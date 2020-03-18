@@ -17,7 +17,7 @@ var upload = multer({storage: storage});
 var pedido = upload.array('fileselect');
 
 
-router.post('add', pedido, (req,res) => {
+router.post('/add', pedido, (req,res) => {
   console.log(req.files);
   console.log(req.body.name);
 
